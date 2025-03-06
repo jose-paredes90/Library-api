@@ -1,4 +1,5 @@
 ﻿using Biblioteca_api.Application.Dtos;
+using Biblioteca_api.Domain.Entities;
 using Biblioteca_api.Domain.Interfaces;
 using MediatR;
 
@@ -19,11 +20,14 @@ namespace Biblioteca_api.Application.Queries.Handlers
             {
                 Id = l.Id,
                 ClientName = $"{l.Client.User.Name}",
+                BookCopyId = l.BookCopyId,
                 BookTitle = l.BookCopy.Book.Title,
                 StartDate = l.StartDate,
                 DueDate = l.DueDate,
                 ReturnDate = l.ReturnDate,
-                Status = l.Status
+                Status = l.BookCopy.Status,
+                Barcode = l.BookCopy.Barcode,
+                ClientId = l.ClientId
             });
         }
     }

@@ -13,7 +13,7 @@ namespace Biblioteca_api.Application.Commands.Handlers
         }
         public async Task<int> Handle(UpdateLoanCommand request, CancellationToken cancellationToken)
         {
-            var loan = await loanRepository.GetById(request.ClientId);
+            var loan = await loanRepository.GetById(request.Id);
             if (loan == null)
                 throw new Exception("El registro no existe");
 

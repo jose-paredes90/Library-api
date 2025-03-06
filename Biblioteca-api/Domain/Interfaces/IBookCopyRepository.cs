@@ -8,6 +8,7 @@ namespace Biblioteca_api.Domain.Interfaces
         Task<BookCopy> Add(BookCopy bookCopy);
         Task<IEnumerable<BookCopy>> GetAllBookCopy();
         Task<BookCopy?> GetByBarcode(string barcode);
+        Task<int> GetCountBooks(int bookId);
     }
 }
 
